@@ -209,7 +209,7 @@ function filterPostDataByLang(posts, lang){
 
 
 function writeSDP(translator){
-  var file = path.join(process.env.STREAMS_DIR, translator.translationLanguage + '.sdp');
+  var file = path.join((process.env.STREAMS_DIR || './'), translator.translationLanguage + '.sdp');
   fs.writeFile(
     file,
     generateSDP(translator),
